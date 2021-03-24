@@ -11,57 +11,86 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+      <div class="grid grid-cols-6 gap-6">
 
-  <div class="field">
-    <%= form.label :domain %>
-    <%= form.text_field :domain %>
-  </div>
+        <div class="col-span-6 sm:col-span-3">
+          <%= form.label :name, class: 'block text-sm font-medium text-gray-700' %>
+          <%= form.text_field :name, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md', autocomplete: 'given-name' %>
+        </div>
 
-  <div class="field">
-    <%= form.label :adress %>
-    <%= form.text_field :adress %>
-  </div>
+        <div class="col-span-6 sm:col-span-3">
+          <%= form.label :phone_number, class: 'block text-sm font-medium text-gray-700' %>
+          <%= form.text_field :phone_number, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md', autocomplete: 'given-name' %>
+        </div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
+        <div class="col-span-9 sm:col-span-4">
+          <%= form.label :address, class: 'block text-sm font-medium text-gray-700' %>
+          <%= form.text_field :address, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md', autocomplete: 'given-name' %>
+        </div>
+        <div class="col-span-3 sm:col-span-2">
+          <%= form.label :zip_code, class: 'block text-sm font-medium text-gray-700' %>
+          <%= form.text_field :zip_code, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md', autocomplete: 'given-name' %>
+        </div>
+        <div class="col-span-6 sm:col-span-2">
+          <%= form.label :city, class: 'block text-sm font-medium text-gray-700' %>
+          <%= form.text_field :city, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md', autocomplete: 'given-name' %>
+        </div>
+        <div class="col-span-6 sm:col-span-2">
+          <%= form.label :state, class: 'block text-sm font-medium text-gray-700' %>
+          <%= form.select(:state, options_for_select([['Puebla', 'Puebla'], ['Mexico City', 'CDMX']]), { prompt: 'Select option' }, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm', autocomplete: 'country') %>
+        </div>
+        <div class="col-span-6 sm:col-span-2">
+          <%= form.label :country, class: 'block text-sm font-medium text-gray-700' %>
+          <%= form.select(:country, options_for_select([['Mexico', 'México']]), {}, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm', autocomplete: 'country') %>
+        </div>
+        <div class="col-span-6 sm:col-span-6">
+          <%= form.label :contact_email, class: 'block text-sm font-medium text-gray-700' %>
+          <%= form.text_field :contact_email, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md', autocomplete: 'given-name' %>
+        </div>
 
-  <div class="field">
-    <%= form.label :zip_code %>
-    <%= form.text_field :zip_code %>
-  </div>
 
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
-  </div>
+        <div class="col-span-6 sm:col-span-3">
+          <%= form.label :domain, class: 'block text-sm font-medium text-gray-700' %>
+          <div class="mt-1 flex rounded-md shadow-sm">
+            <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+              http://www.
+            </span>
+            <%= form.text_field :domain, class: 'focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300', placeholder: 'example.com' %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
+        <div class="col-span-6 sm:col-span-3">
+          <%= form.label :subdomain, class: 'block text-sm font-medium text-gray-700' %>
+          <div class="mt-1 flex rounded-md shadow-sm">
+            <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+              http://www.
+            </span>
+            <%= form.text_field :subdomain, class: 'focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none sm:text-sm border-gray-300', placeholder: 'condesa' %>
+            <span class="inline-flex items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+              .example.com
+            </span>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
-  </div>
+        <div class="col-span-6 sm:col-span-3">
+          <div class="relative flex items-start">
+            <div class="flex items-center h-5">
+              <%= form.check_box :active, class: 'focus:ring-yellow-500 h-4 w-4 text-yellow-600 border-gray-300 rounded' %>
+            </div>
+            <div class="ml-3 text-sm">
+              <%= form.label :active, class: 'font-medium text-gray-700' %>
+              <p class="text-gray-500">Active store.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+      <%= link_to 'Cancelar', stores_path, class: 'bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' %>
+      <%= form.submit class: 'inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' %>
+    </div>
   </div>
 <% end %>
