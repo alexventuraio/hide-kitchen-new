@@ -43,7 +43,7 @@ require 'slackistrano/capistrano'
 
 # Because we are using rvm:
 set :rvm_type, :user
-set :rvm_ruby_version, '2.7.2'
+set :rvm_ruby_version, '3.0.0'
 # Name of the user created in the server to manage deploys
 set :user, 'deploy'
 
