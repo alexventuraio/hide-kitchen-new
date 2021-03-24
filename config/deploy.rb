@@ -4,7 +4,7 @@ lock "~> 3.16.0"
 # set :application, "my_app_name"
 # set :repo_url, "git@example.com:me/my_repo.git"
 set :application, "hide-kitchen"
-set :repo_url, 'git@github.com:alexventuraio/hide-kitchen.git'
+set :repo_url, 'git@github.com:alexventuraio/hide-kitchen-new.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
