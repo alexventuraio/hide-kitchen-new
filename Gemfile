@@ -54,4 +54,6 @@ group :development do
   gem 'capistrano-passenger', '~> 0.2.0'
   gem 'capistrano-rvm', '~> 0.1.2'
   gem 'slackistrano', '~> 4.0', '>= 4.0.1'
+  gem 'ed25519', '~> 1.2', '>= 1.2.4'
+  gem 'bcrypt_pbkdf', '~> 1.1'
 end
