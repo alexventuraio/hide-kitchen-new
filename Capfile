@@ -33,6 +33,19 @@ install_plugin Capistrano::SCM::Git
 # require "capistrano/rails/assets"
 # require "capistrano/rails/migrations"
 # require "capistrano/passenger"
+require 'capistrano/rvm'
+require 'capistrano/bundler'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
+require 'capistrano/passenger'
+require 'capistrano/rails/console'
+require 'slackistrano/capistrano'
+
+# Because we are using rvm:
+set :rvm_type, :user
+set :rvm_ruby_version, '2.7.2'
+# Name of the user created in the server to manage deploys
+set :user, 'deploy'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
