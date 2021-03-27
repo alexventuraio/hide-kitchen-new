@@ -1,5 +1,8 @@
+const env = process.env.NODE_ENV
+
 module.exports = {
   purge: {
+    enabled: env !== 'development',
     content: [
       './app/**/*.html.erb',
       './app/helpers/**/*.rb',
